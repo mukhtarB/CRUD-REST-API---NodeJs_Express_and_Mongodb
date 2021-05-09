@@ -1,0 +1,28 @@
+{
+  "name": "CRUD-REST-API---NodeJs_Express_and_Mongodb",
+  "version": "1.0.0",
+  "description": "Zuri Internship: NodeJs - Task 47   Creating an application REST API to perform CRUD operations with NodeJs, Express and Mongodb.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mukhtarB/CRUD-REST-API---NodeJs_Express_and_Mongodb.git"
+  },
+  "keywords": [],
+  "author": "mukhtar.b_",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mukhtarB/CRUD-REST-API---NodeJs_Express_and_Mongodb/issues"
+  },
+  "homepage": "https://github.com/mukhtarB/CRUD-REST-API---NodeJs_Express_and_Mongodb#readme",
+  "dependencies": {
+    "dotenv": "^9.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
