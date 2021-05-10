@@ -2,9 +2,11 @@
   "name": "CRUD-REST-API---NodeJs_Express_and_Mongodb",
   "version": "1.0.0",
   "description": "Zuri Internship: NodeJs - Task 47   Creating an application REST API to perform CRUD operations with NodeJs, Express and Mongodb.",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "node-app": "node app.js"
   },
   "repository": {
     "type": "git",
