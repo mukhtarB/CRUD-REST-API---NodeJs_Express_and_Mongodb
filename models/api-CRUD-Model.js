@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const apiSchema = mongoose.Schema({
+const apiModelSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -18,4 +18,4 @@ const apiSchema = mongoose.Schema({
 
 
 
-module.exports = mongoose.model('apiPostModel', apiSchema)
+module.exports = mongoose.model('apiModel', apiModelSchema)
