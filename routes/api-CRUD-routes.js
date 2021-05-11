@@ -77,19 +77,18 @@ router.get('/get-from-db/:id', async (req, res) => {
 // ROUTE - /api/update-db-entry/:id
 router.put('/update-db-entry/:id', async (req, res) => {
     try{
-        const update_an_entry = await apiModel.updateOne(
-            {_id: req.params.id},
-            {$set:
-                {
-                    name: req.body.name,
-                    email: req.body.email,
-                    country: req.body.country,
-                }
-            }
-        );
+        
+        // resource => https://youtu.be/sEkRmVfc8XE
+        const update_an_entry = await apiModel.findByIdAndUpdate(
+            {_id: req.params.id}, req.body)
+            .then( () => {
+                    apiModel.findOne({_id: req.params.id}).then (updated_entry => {
+                     // if successful => ({msg, data})
+                    res.status(200).json({message: "Entry Updated", data: updated_entry});
+                });
+            });
 
-        // if successful => ({msg, data})
-        res.status(200).json({message: "Entry Updated", data: update_an_entry});
+       
     } catch (err) {
         // else payload => ({msg, err})
         res.status(500).json({message: "Request Failed", Error: "Error " + err});

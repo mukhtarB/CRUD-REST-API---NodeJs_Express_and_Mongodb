@@ -34,7 +34,8 @@ app.use('/api', apiRoute); //route any /api urls to the apiRoute
 
 
 // Home Page Route - home msg
-const welcomeMsg = 'Welcome to my CRUD REST API application.\n Official documentation exists at: https://github.com/mukhtarB/CRUD-REST-API---NodeJs_Express_and_Mongodb'
+const welcomeMsg = `Welcome to my CRUD REST API application.
+Official documentation exists at => https://github.com/mukhtarB/CRUD-REST-API---NodeJs_Express_and_Mongodb`
 app.get('/', (req, res) => {
     res.send(welcomeMsg)
 });
@@ -45,7 +46,8 @@ app.get('/', (req, res) => {
 mongoose.connect(process.env.CLOUD_DB_ACCESS,
     { 
         useUnifiedTopology: true,
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        useFindAndModify: false
     },
     ()=> {
     console.log("Connected to DB");
