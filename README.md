@@ -14,8 +14,7 @@
  		"country": String
  	}
    ```
-	
- NB: all entries in the schema are required.
+  NB: all entries in the schema are required.
 
 
  API routes:
