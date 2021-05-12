@@ -14,11 +14,11 @@
  		"country": String
  	}
    ```
-  NB: all entries in the schema are required.
+NB: all entries in the schema are required.
 
 
  API routes:
----
+------
  All API routes exists at /api/..
 
  All routes requests return a statusCode, and a payload having a message and some data.
