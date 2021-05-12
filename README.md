@@ -7,6 +7,7 @@
 ### API Documentation:
  API Model Schema:
  The API operates on a database schema structured to take the following data as json format
+ 
     {
       "name": String,
       "email": String,
@@ -21,12 +22,13 @@ NB: all entries in the schema are required.
  All API routes exists at /api/..
 
  All routes requests return a statusCode, and a payload having a message and some data.
+     
     Response:
-    +On success:
+    On success:
       statusCode: 200 or 404
       payload => a success / info message & data i.e ({msg, data})
-    
-    +On error:
+
+    On error:
       statusCode: 500
       payload => an error message & error i.e ({msg, Err})
 
@@ -43,25 +45,28 @@ NB: all entries in the schema are required.
   
 
  - Reading all database documents:
- 
+
     API endpoint => https://crud-rest-api-app.herokuapp.com/api/get-from-db
   
   Fetches all mongodb document entires via the GET verb - at /api/get-from-db route.
   
 
  - Reading a single database document:
+
   API endpoint => https://crud-rest-api-app.herokuapp.com/api/get-from-db/a-valid-id-parameter
   
   Fetches a single mongodb document entry via the GET verb, using the unique _id parameter - at /api/get-from-db/:id route.
   
 	
  - Updating a single database entry:
+
   API endpoint => https://crud-rest-api-app.herokuapp.com/api/update-db-entry/a-valid-id-parameter
   
   Accepts json data modelled after database schema & Updates mongodb document entry via the PUT verb, using the unique _id paramater - at /api/update-db-entry/:id route.
 	
 
  - Delete a Single database entry:
+
   API endpoint => https://crud-rest-api-app.herokuapp.com/api/del-single-db-entry/a-valid-id-parameter
   
   A mongodb document entry can be deleted via the DELETE verb, using the unique _id paramater - at /api/del-single-db-entry/:id route.
