@@ -6,6 +6,7 @@
 
 
 ### API Documentation:
+------
  API Model Schema:
  The API operates on a database schema structured to take the following data as json format
 
@@ -19,7 +20,6 @@ NB: all entries in the schema are required.
 
 
 ### API routes:
-------
  All API routes exists at /api/..
 
  All routes requests return a statusCode, and a payload having a message and some data.
@@ -43,7 +43,7 @@ NB: all entries in the schema are required.
 
   API endpoint => https://crud-rest-api-app.herokuapp.com/api/post-to-db
   
-  Accepts json data modelled after the schema through the post verb. & creates an entry with it. - at /api/post-to-db route.
+  Accepts json data modelled after the schema through the POST verb. & creates an entry with it. - at /api/post-to-db route.
 
 
  - Reading all database documents:
