@@ -18,7 +18,7 @@
 
 NB: all entries in the schema are required.
 
-    <br>
+<br>
 ### API routes:
  All API routes exists at /api/..
 
@@ -44,35 +44,35 @@ NB: all entries in the schema are required.
   API endpoint => https://crud-rest-api-app.herokuapp.com/api/post-to-db
   
   Accepts json data modelled after the schema through the POST verb. & creates an entry with it. - at /api/post-to-db route.
-
+  <br>
 
  - Reading all database documents:
 
   API endpoint => https://crud-rest-api-app.herokuapp.com/api/get-from-db
   
   Fetches all mongodb document entires via the GET verb - at /api/get-from-db route.
-
+  <br>
 
  - Reading a single database document:
 
   API endpoint => https://crud-rest-api-app.herokuapp.com/api/get-from-db/a-valid-id-parameter
   
   Fetches a single mongodb document entry via the GET verb, using the unique _id parameter - at /api/get-from-db/:id route.
-
+  <br>
 
  - Updating a single database entry:
 
   API endpoint => https://crud-rest-api-app.herokuapp.com/api/update-db-entry/a-valid-id-parameter
   
   Accepts json data modelled after database schema & Updates mongodb document entry via the PUT verb, using the unique _id paramater - at /api/update-db-entry/:id route.
-
+  <br>
 
  - Delete a Single database entry:
 
   API endpoint => https://crud-rest-api-app.herokuapp.com/api/del-single-db-entry/a-valid-id-parameter
   
   A mongodb document entry can be deleted via the DELETE verb, using the unique _id paramater - at /api/del-single-db-entry/:id route.
-
+  <br>
   
 ### Author:
   Abdulrazaq Mukhtar Bolaji (mukhtar.b_)
