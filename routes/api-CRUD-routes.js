@@ -41,7 +41,7 @@ router.get('/get-from-db', async (req, res) => {
         //On success
         // if db is empty (is db arr < 1) ... set msg for an empty db
         msg = "Gotten ALL DB data"
-        if (!db_data.length > 0) msg = "DB empty, You have no entries"
+        if (!db_data.length > 0) msg = "DB empty: You have no entries"
 
         // return payload => ({msg, data})
         res.status(200).json({message: msg, data: db_data});
@@ -61,11 +61,16 @@ router.get('/get-from-db/:id', async (req, res) => {
 
         //On success
         // if single_db_data is empty (null), set msg = Entry does not exist
-        msg = "Gotten Single DB Entry"
-        if (!single_db_data) msg = `Entry with id: ${req.params.id} does not exist.`
+        msg = "Gotten Single DB Entry";
+		statusCode = 200;
+		
+        if (!single_db_data) {
+			msg = `Entry with id: ${req.params.id} does not exist.`
+			statusCode = 404
+		}
 
         // payload => ({msg, data})
-        res.status(200).json({message: msg, data: single_db_data});
+        res.status(statusCode).json({message: msg, data: single_db_data});
     } catch (err) {
         // else payload => ({msg, err})
         res.status(500).json({message: "Request Failed", Error: "Error " + err});
@@ -83,8 +88,15 @@ router.put('/update-db-entry/:id', async (req, res) => {
             {_id: req.params.id}, req.body)
             .then( () => {
                     apiModel.findOne({_id: req.params.id}).then (updated_entry => {
+                        msg = "Entry Updated";
+                        statusCode = 200;
+                        
+                        if (!updated_entry) {
+                            msg = `Entry with id: ${req.params.id} does not exist.`
+                            statusCode = 404
+                        }
                      // if successful => ({msg, data})
-                    res.status(200).json({message: "Entry Updated", data: updated_entry});
+                    res.status(statusCode).json({message: msg, data: updated_entry});
                 });
             });
 

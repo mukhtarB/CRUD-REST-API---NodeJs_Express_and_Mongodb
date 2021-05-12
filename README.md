@@ -4,38 +4,78 @@
  
  Application hosted on heroku @ https://crud-rest-api-app.herokuapp.com/
 
-	### API Documentation:
-	API Model Schema:
-	The API operates on a database schema structured to take the following data as json format
-	{
-		"name": String,
-		"email": String,
-		"country": String
-	}
+### API Documentation:
+ API Model Schema:
+ The API operates on a database schema structured to take the following data as json format
+ 	{
+ 		"name": String,
+ 		"email": String,
+ 		"country": String
+ 	}
 	
-	NB: all entries in the schema are required.
+ NB: all entries in the schema are required.
+
+
+ API routes:
+ All API routes exists at /api/..
+
+ All routes requests return a statusCode, and a payload having a message and some data.
+  Response:
+  +On success:
+    statusCode: 200 or 404
+    payload => a success / info message & data i.e ({msg, data})
 	
+  +On error:
+    statusCode: 500
+    payload => an error message & error i.e ({msg, Err})
+
+ Appropriate db entry id's should replace "<a valid id parameter>" where seen further in the documentation.
+ DB Entry Id's can be gotten by querying the database for all it's entries.
+
+ CRUD Operations:
+
+ - Creating a database entry:
+  API endpoint => https://crud-rest-api-app.herokuapp.com/api/post-to-db
+  
+  Accepts json data modelled after the schema through the post verb. & creates an entry with it. - at /api/post-to-db route.
+  
+
+ - Reading all database documents:
+  API endpoint => https://crud-rest-api-app.herokuapp.com/api/get-from-db
+  
+  Fetches all mongodb document entires via the GET verb - at /api/get-from-db route.
+  
+
+ - Reading a single database document:
+  API endpoint => https://crud-rest-api-app.herokuapp.com/api/get-from-db/<a valid id parameter>
+  
+  Fetches a single mongodb document entry via the GET verb, using the unique _id parameter - at /api/get-from-db/:id route.
+  
 	
-	API routes:
-	All API routes exists at /api/
+ - Updating a single database entry:
+  API endpoint => https://crud-rest-api-app.herokuapp.com/api/update-db-entry/<a valid id parameter>
+  
+  Accepts json data modelled after database schema & Updates mongodb document entry via the PUT verb, using the unique _id paramater - at /api/update-db-entry/:id route.
 	
-	- Creating a database entry:
-		A mongodb document entry can be created via the POST verb - at /api/post-to-db route.
-		API endpoint => https://crud-rest-api-app.herokuapp.com/api/post-to-db
-	
-	- Reading all database documents:
-		All mongodb document entries can be fetched via the GET verb - at /api/get-from-db route.
-		API endpoint => https://crud-rest-api-app.herokuapp.com/api/get-from-db
-		
-	- Reading a single database document:
-		A single mongodb document entry can be fetched via the GET verb, using the _id parameter - at /api/get-from-db/:id route.
-		The id paramater can be gotten when all entries in the database is queried.
-		API endpoint => https://crud-rest-api-app.herokuapp.com/api/get-from-db/609ab70773a3ed49183f18c2
-		
-	- Updating a single database entry:
-		A mongodb document entry can be updated via the PUT verb, using the _id paramater - at /api/update-db-entry/:id route.
-		API endpoint => https://crud-rest-api-app.herokuapp.com/api/update-db-entry/609ab70773a3ed49183f18c2
-		
-	- Delete a Single database entry:
-		A mongodb document entry can be deleted via the DELETE verb, using the unique _id paramater - at /api/del-single-db-entry/:id route.
-		API endpoint => https://crud-rest-api-app.herokuapp.com/api/del-single-db-entry/609ae2c14638fa0015c148c9
+
+ - Delete a Single database entry:
+  API endpoint => https://crud-rest-api-app.herokuapp.com/api/del-single-db-entry/<a valid id parameter>
+  
+  A mongodb document entry can be deleted via the DELETE verb, using the unique _id paramater - at /api/del-single-db-entry/:id route.
+  
+### Author:
+  Abdulrazaq Mukhtar Bolaji (mukhtar.b_)
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
