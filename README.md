@@ -7,14 +7,14 @@
 ### API Documentation:
  API Model Schema:
  The API operates on a database schema structured to take the following data as json format
- 	```json
+ 	```javascript
    {
  		"name": String,
  		"email": String,
  		"country": String
  	}
    ```
-NB: all entries in the schema are required.
+ NB: all entries in the schema are required.
 
 
  API routes:
